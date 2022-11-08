@@ -19,6 +19,7 @@ MainWindow::MainWindow(QWidget *parent) :
    // ui->tableView_2->setModel(Emp.afficher());
     //show_table;
 
+    QObject::connect(ui->le_cins,&QLineEdit::textChanged,this,&MainWindow::on_le_cins_textChanged);
 
     QObject::connect(ui->pb_aff,&QPushButton::clicked,this,&MainWindow::on_pb_aff_clicked);
 
@@ -293,7 +294,8 @@ void MainWindow::on_triBox_currentTextChanged(const QString &arg1)
                 ui->tableView_1->setModel(model);
             }
                 else if (type=="CIN"){
-                qry->prepare("select * from Emp order by CIN");
+               qry->prepare("select * from Emp order by CIN");
+
                 qry->exec();
                 model->setQuery(*qry);
 
@@ -340,11 +342,11 @@ void MainWindow::on_pb_imprimer_clicked()
         "<meta Content=\"Text/html; charset=Windows-1251\">\n"
         <<  QString("<title>%1</title>\n").arg("col1")
         <<  "</head>\n"
-        "<body bgcolor=#ffffff link=#5000A0>\n"
-        "<table border=1 cellspacing=0 cellpadding=2>\n";
+        "<body bgcolor=#D6EBEE link=#5000A0>\n"
+        "<table border=1 cellspacing=0 cellpadding=1>\n";
 
     // headers
-    out << "<thead><tr bgcolor=#f0f0f0>";
+    out << "<thead><tr bgcolor=#018ABE>";
     for (int column = 0; column < columnCount; column++)
         if (!ui->tableView_1->isColumnHidden(column))
             out << QString("<th>%1</th>").arg(ui->tableView_1->model()->headerData(column, Qt::Horizontal).toString());
@@ -378,4 +380,81 @@ void MainWindow::on_pb_imprimer_clicked()
     delete document;
 
 }
+
+void MainWindow::on_le_cins_textChanged(const QString &arg1)
+{
+    QSqlQueryModel * modal= new QSqlQueryModel ();
+            QSqlQuery*qry=new QSqlQuery();
+            QString CIN=ui->le_cins->text();
+
+
+            if(CIN.isEmpty())
+            {
+                ui->tableView_1->setModel(Emp.afficher());
+
+            }
+            else
+            {
+                //
+                qry->prepare ("SELECT * from emp where ( CIN LIKE'%"+CIN+"%' OR nom LIKE'%"+CIN+"%' OR prenom LIKE'%"+CIN+"%'OR matricule LIKE'%"+CIN+"%') ");
+                qry->exec();
+                modal->setQuery(*qry);
+                ui->tableView_1->setModel(modal);
+}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*
+void  MainWindow::browse()
+{
+    files.clear();
+
+    QFileDialog dialog(this);
+    dialog.setDirectory(QDir::homePath());
+    dialog.setFileMode(QFileDialog::ExistingFiles);
+
+    if (dialog.exec())
+        files = dialog.selectedFiles();
+
+    QString fileListString;
+    foreach(QString file, files)
+        fileListString.append( "\"" + QFileInfo(file).fileName() + "\" " );
+
+    ui->file->setText( fileListString );
+
+}
+void   MainWindow::sendMail()
+{
+    mailing* mailing = new mailing("zeineb.boussaidi@esprit.tn",ui->mail_pass->text(), "mailing.gmail.com");
+    connect(mailing, SIGNAL(status(QString)), this, SLOT(mailSent(QString)));
+
+    if( !files.isEmpty() )
+        mailing->sendMail("zeineb.boussaidi@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText(), files );
+    else
+        mailing->sendMail("zeineb.boussaidi@esprit.tn", ui->rcpt->text() , ui->subject->text(),ui->msg->toPlainText());
+}
+void   MainWindow::mailSent(QString status)
+{
+
+    if(status == "Message sent")
+        QMessageBox::warning( nullptr, tr( "Qt Simple mailing client" ), tr( "Message sent!\n\n" ) );
+    ui->rcpt->clear();
+    ui->subject->clear();
+    ui->file->clear();
+    ui->msg->clear();
+    ui->mail_pass->clear();
+}
+*/
 
