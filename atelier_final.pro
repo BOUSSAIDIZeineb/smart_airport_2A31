@@ -26,15 +26,19 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    excel.cpp \
     fournisseur.cpp \
         main.cpp \
         mainwindow.cpp \
-    connection.cpp
+    connection.cpp \
+    qcustomplot.cpp
 
 HEADERS += \
+    excel.h \
     fournisseur.h \
         mainwindow.h \
-    connection.h
+    connection.h \
+    qcustomplot.h
 
 FORMS += \
         mainwindow.ui

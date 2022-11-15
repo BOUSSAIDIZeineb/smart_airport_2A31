@@ -6,6 +6,8 @@
 
 class Connection
 {
+    //QSqlQuery *query = new QSqlQuery(db);
+
     QSqlDatabase db;
 public:
     Connection();

@@ -2,6 +2,8 @@
 #include "ui_mainwindow.h"
 #include "fournisseur.h"
 #include "connection.h"
+#include "qcustomplot.h"
+#include "excel.h"
 #include<QMessageBox>
 #include<QtDebug>
 #include <QLabel>
@@ -28,6 +30,20 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
     ui->tableView->setModel(fourn.afficher());
+    ui->tableView_2->setModel(fourn.afficher());
+    ui->tableView_3->setModel(fourn.afficher());
+    QPixmap pix0("C:/Users/21629/Desktop/logo (2).png");
+       int w0=ui->photo_label->width();
+       int h0=ui->photo_label->height();
+       ui->photo_label->setPixmap(pix0.scaled(w0,h0,Qt::KeepAspectRatio));
+       QPixmap pix1("C:/Users/21629/Desktop/logo (2).png");
+          int w1=ui->photo2->width();
+          int h1=ui->photo2->height();
+          ui->photo2->setPixmap(pix1.scaled(w1,h1,Qt::KeepAspectRatio));
+          QPixmap pix2("C:/Users/21629/Desktop/logo (2).png");
+             int w2=ui->photo3->width();
+             int h2=ui->photo3->height();
+             ui->photo3->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
@@ -45,23 +61,46 @@ void MainWindow::on_ajout_clicked()
         QString email=ui->line_email->text();
         QString type_equip=ui->line_equip->text();
         QString type_paiem=ui->line_email->text();
-        QString reclam=ui->line_reclam->text();
+        int nb_equip=ui->line_nbre_ajout->text().toInt();
+        int prix=ui->prix_line_ajout->text().toInt();
 
-        fournisseur F1(id,nom,prenom,num_tel,email,type_equip,type_paiem,reclam);
+        fournisseur F1(id,nom,prenom,num_tel,email,type_equip,type_paiem,nb_equip,prix);
         bool test=F1.ajouter();
         if (test)
         {
             //refresh (actualiser)
             ui->tableView->setModel(fourn.afficher());
+            ui->tableView_2->setModel(fourn.afficher());
+            //ui->tableView_3->setModel(fourn.afficher());
+
+
 
             QMessageBox::information(nullptr, QObject::tr("OK"),
                         QObject::tr("Ajout effectuee.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
+            ui->line_id->clear();
+            ui->line_nom->clear();
+            ui->line_prenom->clear();
+            ui->line_email->clear();
+            ui->line_tel->clear();
+            ui->line_equip->clear();
+            ui->line_paiem->clear();
+            ui->prix_line_ajout->clear();
+            ui->line_nbre_ajout->clear();
         }
         else
             QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
                         QObject::tr("Ajout non effectuee.\n"
                                     "Click Cancel to exit."), QMessageBox::Cancel);
+        ui->line_id->clear();
+        ui->line_nom->clear();
+        ui->line_prenom->clear();
+        ui->line_email->clear();
+        ui->line_tel->clear();
+        ui->line_equip->clear();
+        ui->line_paiem->clear();
+        ui->prix_line_ajout->clear();
+        ui->line_nbre_ajout->clear();
 
 }
 
@@ -74,16 +113,22 @@ void MainWindow::on_supprimer_clicked()
     {
         //refresh
         ui->tableView->setModel(fourn.afficher());
+        //ui->tableView_2->setModel(fourn.afficher());
+        ui->tableView_3->setModel(fourn.afficher());
+
+
 
         QMessageBox::information(nullptr, QObject::tr("OK"),
                     QObject::tr("suppression effectuee.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
-
+    ui->id_supp->clear();
     }
     else
         QMessageBox::critical(nullptr, QObject::tr("NOT OK"),
                     QObject::tr("suppression non effectuee.\n"
                                 "Click Cancel to exit."), QMessageBox::Cancel);
+    ui->id_supp->clear();
+
 }
 
 void MainWindow::on_update_clicked()
@@ -96,16 +141,31 @@ void MainWindow::on_update_clicked()
             int num_tel=ui->tel_pred->text().toInt();
             QString type_equip=ui->equip_line->text();
             QString type_paiem=ui->paiem_line->text();
-            QString reclam=ui->reclam_line->text();
-            fournisseur F2(id,nom,prenom,num_tel,email,type_equip,type_paiem,reclam);
+            QString reclam=ui->lineModif_rec->text();
+            int nb_equip=ui->equip_modifier->text().toInt();
+            int prix=ui->modif_prix->text().toInt();
+            fournisseur F2(id,nom,prenom,num_tel,email,type_equip,type_paiem,nb_equip,prix);
 
             bool test=F2.modifier(id);
 
             ui->tableView->setModel(fourn.afficher());
+            ui->tableView_2->setModel(fourn.afficher());
+
          if(test){
 
             QMessageBox::information(nullptr,QObject::tr("OK"),
                                      QObject::tr("modification effectuee \n""Click Cancel to exit"),QMessageBox::Cancel);
+            ui->Id_pred->clear();
+            ui->nom_pred->clear();
+            ui->prenom_pred->clear();
+            ui->mail_pred->clear();
+            ui->tel_pred->clear();
+            ui->equip_modifier->clear();
+            ui->paiem_line->clear();
+            ui->modif_prix->clear();
+            ui->equip_line->clear();
+            ui->lineModif_rec->clear();
+
         }else
          {
              QMessageBox::information(nullptr,QObject::tr("Not oK"),
@@ -122,7 +182,7 @@ void MainWindow::on_lineEdit_2_cursorPositionChanged(int , int ) //chercher par 
 
 }
 
-void MainWindow::on_lineEdit_cursorPositionChanged(int , int )
+void MainWindow::on_lineEdit_cursorPositionChanged(int , int ) //chercher par prenom
 {
     fournisseur f1;
     QString inputValue,filtrerChecked;
@@ -131,7 +191,7 @@ void MainWindow::on_lineEdit_cursorPositionChanged(int , int )
 
 }
 
-void MainWindow::on_pushButton_clicked()
+void MainWindow::on_pushButton_clicked() //excel
 {
     QString strStream;
     QTextStream out(&strStream);
@@ -184,7 +244,7 @@ void MainWindow::on_pushButton_clicked()
              doc.print(&printer);
 }
 
-void MainWindow::on_comboBox_activated(const QString &arg1)
+void MainWindow::on_comboBox_activated(const QString &arg1) //tri
 {
     fournisseur f;
    QSqlQueryModel * modal = new QSqlQueryModel();
@@ -224,10 +284,194 @@ void MainWindow::on_comboBox_activated(const QString &arg1)
 }
 
 
-void MainWindow::on_lineEdit_3_cursorPositionChanged(int , int )
+void MainWindow::on_lineEdit_3_cursorPositionChanged(int , int ) //chercher par id
 {
     fournisseur f3;
     QString inputValue,filtrerChecked;
     inputValue=ui->lineEdit_3->text();
     ui->tableView->setModel(f3.rechercherdynamique(inputValue,"id"));
+}
+
+void MainWindow::on_pushButton_2_clicked()//login
+{
+    ui->logi_line->text();
+    ui->pass_line->text();
+}
+void MainWindow::makePlot_Type()
+{
+    QVector<double> x3(fourn.dist_prix()), y3(20);
+    for (int i=0; i<x3.size(); ++i)
+    {
+      x3[i] = i+1;
+
+    }
+    for (int i=0; i<y3.size(); ++i)
+    {
+      y3[i] = i+1;
+
+    }
+
+    QCPBars *bars1 = new QCPBars(ui->customPlot2->xAxis, ui->customPlot2->yAxis);
+    bars1->setWidth(2/(double)x3.size());
+    bars1->setData(x3, MainWindow::Statistique_Type());
+    bars1->setPen(Qt::NoPen);
+    bars1->setBrush(QColor(200, 40, 60, 170));
+    ui->customPlot2->replot();
+
+
+    // move bars above graphs and grid below bars:
+    ui->customPlot2->addLayer("abovemain", ui->customPlot2->layer("main"), QCustomPlot::limAbove);
+    ui->customPlot2->addLayer("belowmain", ui->customPlot2->layer("main"), QCustomPlot::limBelow);
+    ui->customPlot2->xAxis->grid()->setLayer("belowmain");  //khtout mtaa les abs wl ordonn
+    ui->customPlot2->yAxis->grid()->setLayer("belowmain");
+
+    // set some pens, brushes and backgrounds:
+    QVector<double> Ticks; // l position ta3 l labels=(les valeurs des prix)
+    for (int j=1;j<fourn.dist_prix()+1;j++){
+        Ticks<<j;
+
+    }
+    QVector<QString> labels;
+    for (int i=0;i<fourn.dist_prix();i++){
+        labels<<fourn.count_prix()[i];
+    }
+    QSharedPointer<QCPAxisTickerText> textTicker(new QCPAxisTickerText);
+    textTicker->addTicks(Ticks,labels);
+    ui->customPlot2->xAxis->setTicker(textTicker);
+    ui->customPlot2->xAxis->setSubTicks(false);
+    ui->customPlot2->xAxis->setTickLength(0,4);
+    ui->customPlot2->xAxis->setBasePen(QPen(Qt::white, 1));
+    ui->customPlot2->yAxis->setBasePen(QPen(Qt::white, 1));
+    ui->customPlot2->xAxis->setTickPen(QPen(Qt::transparent, 1));
+    ui->customPlot2->yAxis->setTickPen(QPen(Qt::white, 1));
+    ui->customPlot2->xAxis->setSubTickPen(QPen(Qt::transparent, 1));
+    ui->customPlot2->yAxis->setSubTickPen(QPen(Qt::transparent, 1));
+    ui->customPlot2->xAxis->setTickLabelColor(Qt::white);
+    ui->customPlot2->yAxis->setTickLabelColor(Qt::white);
+    ui->customPlot2->xAxis->grid()->setPen(QPen(QColor(140, 140, 140), 1, Qt::DotLine));
+    ui->customPlot2->yAxis->grid()->setPen(QPen(QColor(140, 140, 140), 1, Qt::DotLine));
+    ui->customPlot2->xAxis->grid()->setSubGridPen(QPen(QColor(80, 80, 80), 1, Qt::DotLine));
+    ui->customPlot2->yAxis->grid()->setSubGridPen(QPen(QColor(80, 80, 80), 1, Qt::DotLine));
+    ui->customPlot2->xAxis->grid()->setSubGridVisible(true);
+    ui->customPlot2->yAxis->grid()->setSubGridVisible(true);
+    ui->customPlot2->xAxis->grid()->setZeroLinePen(Qt::NoPen);
+    ui->customPlot2->yAxis->grid()->setZeroLinePen(Qt::NoPen);
+    ui->customPlot2->xAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
+    ui->customPlot2->yAxis->setUpperEnding(QCPLineEnding::esSpikeArrow);
+    QLinearGradient plotGradient;
+    plotGradient.setStart(0, 0);
+    plotGradient.setFinalStop(0, 350);
+    plotGradient.setColorAt(0, QColor(10, 50, 80));
+    plotGradient.setColorAt(1, QColor(10, 20, 50));
+    ui->customPlot2->setBackground(plotGradient);
+    QLinearGradient axisRectGradient;
+    axisRectGradient.setStart(0, 0);
+    axisRectGradient.setFinalStop(0, 350);
+    axisRectGradient.setColorAt(0, QColor(10, 50, 80));
+    axisRectGradient.setColorAt(1, QColor(0, 0, 30));
+    ui->customPlot2->axisRect()->setBackground(axisRectGradient);
+
+    ui->customPlot2->rescaleAxes();
+    ui->customPlot2->xAxis->setRange(0, 7);
+    ui->customPlot2->yAxis->setRange(0, 10);
+}
+QVector<double> MainWindow::Statistique_Type()
+{
+    QSqlQuery q;
+    QVector<double> stat(fourn.dist_prix());
+
+//stat mtaa kol prix
+    q.prepare("SELECT prix FROM GEST_FOURN");
+    q.exec();
+    while (q.next())
+    {
+        for (int i=0;i<fourn.dist_prix();i++){
+        if (q.value(0)==fourn.count_prix()[i]){ //value(0) heya l valeur eli bch traj3heli requete
+            stat[i]++;
+        }
+       }
+    }
+
+    return stat;
+}
+
+
+void MainWindow::on_excel_button_clicked()
+{
+    //exportation
+    QString fileName = QFileDialog::getSaveFileName(this, tr("Exportation en fichier Excel Oumaima "), qApp->applicationDirPath (),
+                                                              tr("Fichiers d'extension Excel (*.xls)"));
+              if (fileName.isEmpty())
+                  return;
+
+              EXCEL obj(fileName, "GEST_FOURN", ui->tableView);
+
+              // you can change the column order and
+              // choose which colum to export
+              obj.addField(0, "ID",    "number");
+              obj.addField(1, "NOM", "char(20)");
+              obj.addField(2, "PRENOM", "char(20)");
+              obj.addField(3, "NUM_TEL", "char(20)");
+              obj.addField(4, "EMAIL", "char(20)");
+              obj.addField(5, "TYPE_EQUIP", "char(20)");
+              obj.addField(6, "TYPE_PAIEM", "char(20)");
+              obj.addField(7, "RECLAM", "char(20)");
+              obj.addField(8, "NB_EQUIP", "number");
+              obj.addField(9, "PRIX", "number");
+              obj.addField(10, "FACTURE", "number");
+
+
+
+              int retVal = obj.export2Excel();
+
+              if( retVal > 0)
+              {
+                  QMessageBox::information(this, tr("FAIS!"),
+                                           QString(tr("%1 enregistrements exportÃ©s!")).arg(retVal)
+                                           );
+              }
+
+}
+
+void MainWindow::on_stat_button_clicked()
+{
+    MainWindow::makePlot_Type();
+}
+
+void MainWindow::on_reclam_butt_ajouter_clicked()
+{
+    int id_r=ui->Id_recl_4->text().toInt();
+                int id_f=ui->Id_recl->text().toInt();
+                QString reclam=ui->textEdit->toPlainText();
+
+
+                bool test=fourn.ajouterReclam(id_r,id_f,reclam);
+
+             if(test){
+
+                QMessageBox::information(nullptr,QObject::tr("OK"),
+                                         QObject::tr("Ajout reclamation effectuee \n""Click Cancel to exit"),QMessageBox::Cancel);
+                ui->textEdit->clear();
+                ui->Id_recl->clear();
+                ui->Id_recl_4->clear();
+            }else
+             {
+                 QMessageBox::warning(nullptr,QObject::tr("Not oK"),
+                                          QObject::tr("Ajout reclamation non effectuee \n""Click Cancel to exit"),QMessageBox::Cancel);
+    }
+
+}
+
+void MainWindow::on_afficher_reclam_clicked()
+{
+
+    int idd = ui->Id_recl_3->text().toInt();
+    ui->listView->setModel(fourn.afficherReclam(idd));
+
+}
+
+void MainWindow::on_pushButton_3_clicked() //refresh
+{
+    ui->tableView->setModel(fourn.afficher());
+
 }
