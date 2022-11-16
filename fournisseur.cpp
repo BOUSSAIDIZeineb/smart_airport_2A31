@@ -96,7 +96,7 @@ bool fournisseur::modifier(int id)
            QString res=QString::number(id);
 
 
-                   query.prepare("UPDATE GEST_FOURN "" SET id=:id, nom=:nom, prenom=:prenom, email=:email, num_tel=:num_tel,type=equip=:type_equip,type_paiem=:type_paiem,reclam=:reclam,nb_equip=:nb_equip,prix=:prix where ID='"+res+"' ");
+                   query.prepare("UPDATE GEST_FOURN "" SET id=:id, nom=:nom, prenom=:prenom, email=:email, num_tel=:num_tel,type_equip=:type_equip,type_paiem=:type_paiem,reclam=:reclam,nb_equip=:nb_equip,prix=:prix where ID='"+res+"' ");
                    query.bindValue(":id",res);
                    query.bindValue(":nom", nom);
                    query.bindValue(":prenom", prenom);

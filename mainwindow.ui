@@ -28,7 +28,7 @@
 </string>
     </property>
     <property name="currentIndex">
-     <number>4</number>
+     <number>1</number>
     </property>
     <widget class="QWidget" name="tab">
      <attribute name="title">
@@ -128,7 +128,7 @@
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>10</y>
+        <y>20</y>
         <width>1111</width>
         <height>521</height>
        </rect>
@@ -416,6 +416,12 @@ font-size: 15px;
          <width>69</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+font-weight: bold;
+font-size: 15px;
+}</string>
        </property>
        <property name="text">
         <string>Prix</string>
@@ -1088,6 +1094,12 @@ font-size: 15px;
          <height>20</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+font-weight: bold;
+font-size: 15px;
+}</string>
+       </property>
        <property name="text">
         <string>Prix</string>
        </property>
@@ -1110,6 +1122,12 @@ font-size: 15px;
          <width>121</width>
          <height>20</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">QLabel {
+font-weight: bold;
+font-size: 15px;
+}</string>
        </property>
        <property name="text">
         <string>Reclamation</string>
@@ -1350,6 +1368,19 @@ font-size: 15px;
           <width>511</width>
           <height>351</height>
          </rect>
+        </property>
+       </widget>
+       <widget class="QLabel" name="photo5">
+        <property name="geometry">
+         <rect>
+          <x>820</x>
+          <y>10</y>
+          <width>211</width>
+          <height>181</height>
+         </rect>
+        </property>
+        <property name="text">
+         <string/>
         </property>
        </widget>
       </widget>

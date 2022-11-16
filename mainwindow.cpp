@@ -44,6 +44,10 @@ MainWindow::MainWindow(QWidget *parent) :
              int w2=ui->photo3->width();
              int h2=ui->photo3->height();
              ui->photo3->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
+             QPixmap pix3("C:/Users/21629/Desktop/logo (2).png");
+                int w3=ui->photo5->width();
+                int h3=ui->photo5->height();
+                ui->photo5->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
@@ -168,7 +172,7 @@ void MainWindow::on_update_clicked()
 
         }else
          {
-             QMessageBox::information(nullptr,QObject::tr("Not oK"),
+             QMessageBox::critical(nullptr,QObject::tr("Not oK"),
                                       QObject::tr("modification non effectuee \n""Click Cancel to exit"),QMessageBox::Cancel);
 }
 }
@@ -191,7 +195,7 @@ void MainWindow::on_lineEdit_cursorPositionChanged(int , int ) //chercher par pr
 
 }
 
-void MainWindow::on_pushButton_clicked() //excel
+void MainWindow::on_pushButton_clicked() //pdf
 {
     QString strStream;
     QTextStream out(&strStream);
@@ -240,7 +244,7 @@ void MainWindow::on_pushButton_clicked() //excel
 
             QTextDocument doc;
              doc.setHtml(strStream);
-             doc.setPageSize(printer.pageRect().size()); // This is necessary if you want to hide the page number
+             doc.setPageSize(printer.pageRect().size());
              doc.print(&printer);
 }
 
@@ -427,7 +431,7 @@ void MainWindow::on_excel_button_clicked()
               if( retVal > 0)
               {
                   QMessageBox::information(this, tr("FAIS!"),
-                                           QString(tr("%1 enregistrements exportÃ©s!")).arg(retVal)
+                                           QString(tr("%1 enregistrements exportées!")).arg(retVal)
                                            );
               }
 
