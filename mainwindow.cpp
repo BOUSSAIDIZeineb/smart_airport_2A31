@@ -330,12 +330,12 @@ void MainWindow::makePlot_Type()
     ui->customPlot2->yAxis->grid()->setLayer("belowmain");
 
     // set some pens, brushes and backgrounds:
-    QVector<double> Ticks; // l position ta3 l labels=(les valeurs des prix)
+    QVector<double> Ticks; // (les valeurs des prix)
     for (int j=1;j<fourn.dist_prix()+1;j++){
         Ticks<<j;
 
     }
-    QVector<QString> labels;
+    QVector<QString> labels; //nbre des prix
     for (int i=0;i<fourn.dist_prix();i++){
         labels<<fourn.count_prix()[i];
     }
