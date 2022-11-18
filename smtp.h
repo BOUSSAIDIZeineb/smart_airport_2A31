@@ -1,5 +1,6 @@
-#ifndef MAILING_H
-#define MAILING_H
+#ifndef SMTP_H
+#define SMTP_H
+
 
 
 #include <QtNetwork/QAbstractSocket>
@@ -14,15 +15,15 @@
 
 
 
-class mailing : public QObject
+class Smtp : public QObject
 {
     Q_OBJECT
 
 
 public:
-    mailing( const QString &user, const QString &pass,
+    Smtp( const QString &user, const QString &pass,
           const QString &host, int port = 465, int timeout = 30000 );
-    ~mailing();
+    ~Smtp();
 
     void sendMail( const QString &from, const QString &to,
                    const QString &subject, const QString &body,
@@ -54,4 +55,4 @@ private:
     int state;
 
 };
-#endif  // MAILING_H
+#endif
