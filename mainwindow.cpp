@@ -22,6 +22,8 @@
 #include <QPrintDialog>
 #include<QtSql/QSqlQuery>
 #include<QVariant>
+#include "arduino.h"
+
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -29,6 +31,19 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    int ret=A.connect_arduino();
+    switch (ret)
+    {
+    case(0): qDebug()<<"arduino is available and connected to:"<<A.getarduino_port_name();
+        break;
+    case(1):qDebug()<<"arduino is available but not connected to:"<<A.getarduino_port_name();
+        break;
+    case(-1):qDebug()<<"arduino is not available";
+
+    }
+    QObject::connect(A.getserial(),SIGNAL(readRead()),this,SLOT(update_label()));
+
+
     ui->tableView->setModel(fourn.afficher());
     ui->tableView_2->setModel(fourn.afficher());
     ui->tableView_3->setModel(fourn.afficher());
@@ -134,6 +149,8 @@ void MainWindow::on_supprimer_clicked()
     ui->id_supp->clear();
 
 }
+
+
 
 void MainWindow::on_update_clicked()
 {
@@ -479,3 +496,53 @@ void MainWindow::on_pushButton_3_clicked() //refresh
     ui->tableView->setModel(fourn.afficher());
 
 }
+
+
+// ********************arduino*****************
+
+void MainWindow::on_pushButton_4_clicked() //on
+{
+    A.write_to_arduino("1");
+}
+
+void MainWindow::on_pushButton_5_clicked() //off
+{
+    A.write_to_arduino("0");
+}
+
+void MainWindow::on_pushButton_6_clicked()
+{
+    A.write_to_arduino("2");
+}
+
+void MainWindow::on_pushButton_7_clicked()
+{
+    A.write_to_arduino("3");
+}
+
+
+
+
+
+void MainWindow::update_label()
+{
+    data=A.read_from_arduino();
+    if(data=="1")
+    {
+        QPixmap pixlab("C:Users/21629/Desktop/full");
+           int wlab=ui->update_label->width();
+           int hlab=ui->update_label->height();
+           ui->update_label->setPixmap(pixlab.scaled(wlab,hlab,Qt::KeepAspectRatio));
+    }
+
+    else if (data=="0")
+    {
+        QPixmap pixlab1("C:Users/21629/Desktop/empty");
+           int wlab1=ui->update_label->width();
+           int hlab1=ui->update_label->height();
+           ui->update_label->setPixmap(pixlab1.scaled(wlab1,hlab1,Qt::KeepAspectRatio));
+
+    }
+
+}
+

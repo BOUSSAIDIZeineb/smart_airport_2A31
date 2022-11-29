@@ -2,7 +2,7 @@
 #define MAINWINDOW_H
 #include "fournisseur.h"
 #include <QMainWindow>
-
+#include "arduino.h"
 namespace Ui {
 class MainWindow;
 }
@@ -14,10 +14,13 @@ class MainWindow : public QMainWindow
 public:
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    //void update_label();
 
     //fournisseur fourn;
 
 private slots:
+    void update_label();
+
     void on_ajout_clicked();
 
     void on_supprimer_clicked();
@@ -49,9 +52,20 @@ private slots:
 
     void on_pushButton_3_clicked();
 
+    void on_pushButton_4_clicked(); //on
+
+    void on_pushButton_5_clicked(); //off
+
+    void on_pushButton_6_clicked();
+
+    void on_pushButton_7_clicked();
+
 private:
     Ui::MainWindow *ui;
     fournisseur fourn;
+
+    QByteArray data;
+    Arduino A;
 };
 
 #endif // MAINWINDOW_H
