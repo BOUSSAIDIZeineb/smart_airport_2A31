@@ -22,7 +22,6 @@
 #include <QPrintDialog>
 #include<QtSql/QSqlQuery>
 #include<QVariant>
-#include "arduino.h"
 
 
 
@@ -31,38 +30,44 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    int ret=A.connect_arduino();
-    switch (ret)
-    {
-    case(0): qDebug()<<"arduino is available and connected to:"<<A.getarduino_port_name();
-        break;
-    case(1):qDebug()<<"arduino is available but not connected to:"<<A.getarduino_port_name();
-        break;
-    case(-1):qDebug()<<"arduino is not available";
 
-    }
-    QObject::connect(A.getserial(),SIGNAL(readRead()),this,SLOT(update_label()));
 
 
     ui->tableView->setModel(fourn.afficher());
     ui->tableView_2->setModel(fourn.afficher());
     ui->tableView_3->setModel(fourn.afficher());
-    QPixmap pix0("C:/Users/21629/Desktop/logo (2).png");
-       int w0=ui->photo_label->width();
-       int h0=ui->photo_label->height();
-       ui->photo_label->setPixmap(pix0.scaled(w0,h0,Qt::KeepAspectRatio));
-       QPixmap pix1("C:/Users/21629/Desktop/logo (2).png");
-          int w1=ui->photo2->width();
-          int h1=ui->photo2->height();
-          ui->photo2->setPixmap(pix1.scaled(w1,h1,Qt::KeepAspectRatio));
-          QPixmap pix2("C:/Users/21629/Desktop/logo (2).png");
-             int w2=ui->photo3->width();
-             int h2=ui->photo3->height();
-             ui->photo3->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
-             QPixmap pix3("C:/Users/21629/Desktop/logo (2).png");
-                int w3=ui->photo5->width();
-                int h3=ui->photo5->height();
-                ui->photo5->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
+    QPixmap pix0("C:/Users/21629/Desktop/background.png");
+       int w0=ui->label_b1->width();
+       int h0=ui->label_b1->height();
+       ui->label_b1->setPixmap(pix0.scaled(w0,h0,Qt::KeepAspectRatio));
+       QPixmap pix1("C:/Users/21629/Desktop/background.png");
+          int w1=ui->label_b2->width();
+          int h1=ui->label_b2->height();
+          ui->label_b2->setPixmap(pix1.scaled(w1,h1,Qt::KeepAspectRatio));
+          QPixmap pix2("C:/Users/21629/Desktop/background.png");
+             int w2=ui->label_b3->width();
+             int h2=ui->label_b3->height();
+             ui->label_b3->setPixmap(pix2.scaled(w2,h2,Qt::KeepAspectRatio));
+             QPixmap pix3("C:/Users/21629/Desktop/background.png");
+                int w3=ui->label_b5->width();
+                int h3=ui->label_b5->height();
+                ui->label_b5->setPixmap(pix3.scaled(w3,h3,Qt::KeepAspectRatio));
+                QPixmap pix4("C:/Users/21629/Desktop/background.png");
+                   int w4=ui->label_b4->width();
+                   int h4=ui->label_b4->height();
+                   ui->label_b4->setPixmap(pix4.scaled(w4,h4,Qt::KeepAspectRatio));
+                   QPixmap pix8("C:/Users/21629/Desktop/background.png");
+                      int w8=ui->label_b8->width();
+                      int h8=ui->label_b8->height();
+                      ui->label_b8->setPixmap(pix8.scaled(w8,h8,Qt::KeepAspectRatio));
+                      QPixmap pix9("C:/Users/21629/Desktop/background.png");
+                         int w9=ui->label_b2->width();
+                         int h9=ui->label_b2->height();
+                         ui->label_b2->setPixmap(pix9.scaled(w9,h9,Qt::KeepAspectRatio));
+                         QPixmap pix6("C:/Users/21629/Desktop/background.png");
+                            int w6=ui->label_b6->width();
+                            int h6=ui->label_b6->height();
+                            ui->label_b6->setPixmap(pix6.scaled(w6,h6,Qt::KeepAspectRatio));
 }
 
 MainWindow::~MainWindow()
@@ -312,12 +317,12 @@ void MainWindow::on_lineEdit_3_cursorPositionChanged(int , int ) //chercher par 
     inputValue=ui->lineEdit_3->text();
     ui->tableView->setModel(f3.rechercherdynamique(inputValue,"id"));
 }
-
+/*
 void MainWindow::on_pushButton_2_clicked()//login
 {
     ui->logi_line->text();
     ui->pass_line->text();
-}
+}*/
 void MainWindow::makePlot_Type()
 {
     QVector<double> x3(fourn.dist_prix()), y3(20);
@@ -500,49 +505,12 @@ void MainWindow::on_pushButton_3_clicked() //refresh
 
 // ********************arduino*****************
 
-void MainWindow::on_pushButton_4_clicked() //on
-{
-    A.write_to_arduino("1");
-}
-
-void MainWindow::on_pushButton_5_clicked() //off
-{
-    A.write_to_arduino("0");
-}
-
-void MainWindow::on_pushButton_6_clicked()
-{
-    A.write_to_arduino("2");
-}
-
-void MainWindow::on_pushButton_7_clicked()
-{
-    A.write_to_arduino("3");
-}
 
 
 
 
 
-void MainWindow::update_label()
-{
-    data=A.read_from_arduino();
-    if(data=="1")
-    {
-        QPixmap pixlab("C:Users/21629/Desktop/full");
-           int wlab=ui->update_label->width();
-           int hlab=ui->update_label->height();
-           ui->update_label->setPixmap(pixlab.scaled(wlab,hlab,Qt::KeepAspectRatio));
-    }
 
-    else if (data=="0")
-    {
-        QPixmap pixlab1("C:Users/21629/Desktop/empty");
-           int wlab1=ui->update_label->width();
-           int hlab1=ui->update_label->height();
-           ui->update_label->setPixmap(pixlab1.scaled(wlab1,hlab1,Qt::KeepAspectRatio));
 
-    }
 
-}
 

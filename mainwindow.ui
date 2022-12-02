@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1218</width>
-    <height>695</height>
+    <width>1270</width>
+    <height>673</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,15 +17,14 @@
    <widget class="QTabWidget" name="tabWidget">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>30</y>
-      <width>1131</width>
-      <height>561</height>
+      <x>10</x>
+      <y>10</y>
+      <width>1211</width>
+      <height>641</height>
      </rect>
     </property>
     <property name="styleSheet">
-     <string notr="true">background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #6b86ff);
-</string>
+     <string notr="true"/>
     </property>
     <property name="currentIndex">
      <number>6</number>
@@ -42,6 +41,25 @@
         <width>661</width>
         <height>331</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*color: rgb(0, 0, 127);*/
+
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}</string>
       </property>
       <property name="title">
        <string>authentification : </string>
@@ -101,6 +119,10 @@
          <height>34</height>
         </rect>
        </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
+       </property>
        <property name="text">
         <string>Let me in</string>
        </property>
@@ -127,15 +149,30 @@
      <widget class="QGroupBox" name="groupBox">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>0</x>
         <y>20</y>
-        <width>1111</width>
-        <height>521</height>
+        <width>1241</width>
+        <height>531</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #6b86ff);
+       <string notr="true">/*color: rgb(0, 0, 127);*/
 
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}
 </string>
       </property>
       <property name="title">
@@ -144,17 +181,16 @@
       <widget class="QLabel" name="label">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>30</x>
          <y>60</y>
          <width>69</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>ID</string>
@@ -163,17 +199,16 @@ font-size: 15px;
       <widget class="QLabel" name="label_2">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>30</x>
          <y>130</y>
          <width>69</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Nom</string>
@@ -182,17 +217,16 @@ font-size: 15px;
       <widget class="QLabel" name="label_3">
        <property name="geometry">
         <rect>
-         <x>0</x>
-         <y>200</y>
+         <x>30</x>
+         <y>210</y>
          <width>69</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Prenom</string>
@@ -201,17 +235,16 @@ font-size: 15px;
       <widget class="QLabel" name="label_4">
        <property name="geometry">
         <rect>
-         <x>0</x>
+         <x>30</x>
          <y>280</y>
          <width>141</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Numero telephone</string>
@@ -220,17 +253,16 @@ font-size: 15px;
       <widget class="QLabel" name="label_5">
        <property name="geometry">
         <rect>
-         <x>20</x>
+         <x>40</x>
          <y>360</y>
          <width>69</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Email</string>
@@ -246,10 +278,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Type equipement</string>
@@ -265,10 +296,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Type paiement</string>
@@ -284,10 +314,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Nombre d'equipement</string>
@@ -296,7 +325,7 @@ font-size: 15px;
       <widget class="QLineEdit" name="line_id">
        <property name="geometry">
         <rect>
-         <x>150</x>
+         <x>190</x>
          <y>60</y>
          <width>113</width>
          <height>25</height>
@@ -306,7 +335,7 @@ font-size: 15px;
       <widget class="QLineEdit" name="line_nom">
        <property name="geometry">
         <rect>
-         <x>150</x>
+         <x>190</x>
          <y>130</y>
          <width>113</width>
          <height>25</height>
@@ -316,8 +345,8 @@ font-size: 15px;
       <widget class="QLineEdit" name="line_prenom">
        <property name="geometry">
         <rect>
-         <x>150</x>
-         <y>200</y>
+         <x>190</x>
+         <y>210</y>
          <width>113</width>
          <height>25</height>
         </rect>
@@ -326,7 +355,7 @@ font-size: 15px;
       <widget class="QLineEdit" name="line_tel">
        <property name="geometry">
         <rect>
-         <x>150</x>
+         <x>190</x>
          <y>280</y>
          <width>113</width>
          <height>25</height>
@@ -376,20 +405,15 @@ font-size: 15px;
       <widget class="QPushButton" name="ajout">
        <property name="geometry">
         <rect>
-         <x>860</x>
-         <y>340</y>
+         <x>440</x>
+         <y>420</y>
          <width>112</width>
          <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
        </property>
        <property name="text">
         <string>Ajouter</string>
@@ -398,8 +422,8 @@ font-size: 15px;
       <widget class="QLabel" name="photo_label">
        <property name="geometry">
         <rect>
-         <x>790</x>
-         <y>30</y>
+         <x>900</x>
+         <y>80</y>
          <width>201</width>
          <height>151</height>
         </rect>
@@ -418,10 +442,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Prix</string>
@@ -437,6 +460,40 @@ font-size: 15px;
         </rect>
        </property>
       </widget>
+      <widget class="QLabel" name="label_b1">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>1181</width>
+         <height>471</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_b1</zorder>
+      <zorder>label</zorder>
+      <zorder>label_2</zorder>
+      <zorder>label_3</zorder>
+      <zorder>label_4</zorder>
+      <zorder>label_5</zorder>
+      <zorder>label_6</zorder>
+      <zorder>label_7</zorder>
+      <zorder>label_8</zorder>
+      <zorder>line_id</zorder>
+      <zorder>line_nom</zorder>
+      <zorder>line_prenom</zorder>
+      <zorder>line_tel</zorder>
+      <zorder>line_email</zorder>
+      <zorder>line_equip</zorder>
+      <zorder>line_paiem</zorder>
+      <zorder>line_nbre_ajout</zorder>
+      <zorder>ajout</zorder>
+      <zorder>photo_label</zorder>
+      <zorder>label_10</zorder>
+      <zorder>prix_line_ajout</zorder>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_3">
@@ -453,10 +510,9 @@ font-size: 15px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+       <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
       </property>
       <property name="text">
        <string>Nom</string>
@@ -472,10 +528,9 @@ font-size: 15px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+       <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
       </property>
       <property name="text">
        <string>Prenom</string>
@@ -511,10 +566,9 @@ font-size: 15px;
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+       <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
       </property>
       <property name="text">
        <string>ID</string>
@@ -535,13 +589,28 @@ font-size: 15px;
        <rect>
         <x>0</x>
         <y>10</y>
-        <width>1161</width>
-        <height>521</height>
+        <width>1241</width>
+        <height>551</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #6b86ff);
+       <string notr="true">/*color: rgb(0, 0, 127);*/
 
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}
 </string>
       </property>
       <property name="title">
@@ -552,7 +621,7 @@ font-size: 15px;
         <rect>
          <x>10</x>
          <y>110</y>
-         <width>1111</width>
+         <width>1191</width>
          <height>401</height>
         </rect>
        </property>
@@ -560,20 +629,15 @@ font-size: 15px;
       <widget class="QPushButton" name="pushButton">
        <property name="geometry">
         <rect>
-         <x>990</x>
-         <y>20</y>
+         <x>800</x>
+         <y>70</y>
          <width>112</width>
          <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
        </property>
        <property name="text">
         <string>PDF</string>
@@ -631,20 +695,15 @@ font-size: 15px;
       <widget class="QPushButton" name="excel_button">
        <property name="geometry">
         <rect>
-         <x>990</x>
+         <x>920</x>
          <y>70</y>
          <width>112</width>
          <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
        </property>
        <property name="text">
         <string>EXCEL</string>
@@ -653,16 +712,40 @@ font-size: 15px;
       <widget class="QPushButton" name="pushButton_3">
        <property name="geometry">
         <rect>
-         <x>760</x>
-         <y>40</y>
+         <x>680</x>
+         <y>70</y>
          <width>112</width>
          <height>34</height>
         </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
        </property>
        <property name="text">
         <string>REFRESH</string>
        </property>
       </widget>
+      <widget class="QLabel" name="label_b2">
+       <property name="geometry">
+        <rect>
+         <x>0</x>
+         <y>0</y>
+         <width>1251</width>
+         <height>541</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_b2</zorder>
+      <zorder>tableView</zorder>
+      <zorder>pushButton</zorder>
+      <zorder>label_19</zorder>
+      <zorder>comboBox</zorder>
+      <zorder>excel_button</zorder>
+      <zorder>pushButton_3</zorder>
      </widget>
      <zorder>groupBox_5</zorder>
      <zorder>label_17</zorder>
@@ -679,15 +762,30 @@ font-size: 15px;
      <widget class="QGroupBox" name="groupBox_3">
       <property name="geometry">
        <rect>
-        <x>20</x>
-        <y>40</y>
-        <width>1101</width>
-        <height>451</height>
+        <x>0</x>
+        <y>10</y>
+        <width>1251</width>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #6b86ff);
+       <string notr="true">/*color: rgb(0, 0, 127);*/
 
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}
 </string>
       </property>
       <property name="title">
@@ -696,17 +794,16 @@ font-size: 15px;
       <widget class="QLabel" name="label_9">
        <property name="geometry">
         <rect>
-         <x>60</x>
-         <y>160</y>
+         <x>20</x>
+         <y>60</y>
          <width>69</width>
          <height>20</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>ID</string>
@@ -715,8 +812,8 @@ font-size: 15px;
       <widget class="QLineEdit" name="id_supp">
        <property name="geometry">
         <rect>
-         <x>170</x>
-         <y>160</y>
+         <x>30</x>
+         <y>100</y>
          <width>113</width>
          <height>25</height>
         </rect>
@@ -725,20 +822,16 @@ font-size: 15px;
       <widget class="QPushButton" name="supprimer">
        <property name="geometry">
         <rect>
-         <x>40</x>
-         <y>260</y>
+         <x>80</x>
+         <y>210</y>
          <width>112</width>
          <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);
+</string>
        </property>
        <property name="text">
         <string>Supprimer</string>
@@ -760,13 +853,27 @@ font-size: 15px;
       <widget class="QTableView" name="tableView_3">
        <property name="geometry">
         <rect>
-         <x>190</x>
-         <y>210</y>
+         <x>10</x>
+         <y>310</y>
          <width>881</width>
          <height>221</height>
         </rect>
        </property>
       </widget>
+      <widget class="QLabel" name="label_b3">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>50</y>
+         <width>1231</width>
+         <height>501</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_b3</zorder>
       <zorder>label_9</zorder>
       <zorder>id_supp</zorder>
       <zorder>supprimer</zorder>
@@ -783,31 +890,33 @@ font-size: 15px;
        <rect>
         <x>10</x>
         <y>20</y>
-        <width>1111</width>
-        <height>501</height>
+        <width>1181</width>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">background: QLinearGradient(x1: 0, y1: 0, x2: 0, y2: 1, stop: 0 #eef, stop: 1 #6b86ff);
+       <string notr="true">/*color: rgb(0, 0, 127);*/
 
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}
 </string>
       </property>
       <property name="title">
        <string>Mise à jour des informations personnelles :</string>
       </property>
-      <widget class="QLabel" name="label_11">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>60</y>
-         <width>291</width>
-         <height>20</height>
-        </rect>
-       </property>
-       <property name="text">
-        <string>les nouvelles informations :</string>
-       </property>
-      </widget>
       <widget class="QLabel" name="label_12">
        <property name="geometry">
         <rect>
@@ -818,10 +927,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>ID</string>
@@ -837,10 +945,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Nom</string>
@@ -856,10 +963,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Prenom</string>
@@ -875,10 +981,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Email</string>
@@ -894,10 +999,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Num_tel</string>
@@ -956,20 +1060,15 @@ font-size: 15px;
       <widget class="QPushButton" name="update">
        <property name="geometry">
         <rect>
-         <x>270</x>
-         <y>450</y>
+         <x>340</x>
+         <y>460</y>
          <width>112</width>
          <height>34</height>
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
        </property>
        <property name="text">
         <string>UPDATE</string>
@@ -1015,10 +1114,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Type equipement</string>
@@ -1034,10 +1132,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Type paiement</string>
@@ -1053,10 +1150,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Nombre equipement</string>
@@ -1078,8 +1174,8 @@ font-size: 15px;
       <widget class="QTableView" name="tableView_2">
        <property name="geometry">
         <rect>
-         <x>650</x>
-         <y>240</y>
+         <x>660</x>
+         <y>250</y>
          <width>451</width>
          <height>251</height>
         </rect>
@@ -1095,10 +1191,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Prix</string>
@@ -1124,10 +1219,9 @@ font-size: 15px;
         </rect>
        </property>
        <property name="styleSheet">
-        <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
        </property>
        <property name="text">
         <string>Reclamation</string>
@@ -1143,7 +1237,20 @@ font-size: 15px;
         </rect>
        </property>
       </widget>
-      <zorder>label_11</zorder>
+      <widget class="QLabel" name="label_b4">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>1151</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <zorder>label_b4</zorder>
       <zorder>label_12</zorder>
       <zorder>label_13</zorder>
       <zorder>label_14</zorder>
@@ -1173,37 +1280,146 @@ font-size: 15px;
      <attribute name="title">
       <string>Statistique</string>
      </attribute>
-     <widget class="QCustomPlot" name="customPlot2" native="true">
+     <widget class="QGroupBox" name="groupBox_8">
       <property name="geometry">
        <rect>
-        <x>150</x>
-        <y>100</y>
-        <width>751</width>
-        <height>371</height>
-       </rect>
-      </property>
-     </widget>
-     <widget class="QPushButton" name="stat_button">
-      <property name="geometry">
-       <rect>
-        <x>300</x>
-        <y>40</y>
-        <width>421</width>
-        <height>34</height>
+        <x>10</x>
+        <y>20</y>
+        <width>1191</width>
+        <height>561</height>
        </rect>
       </property>
       <property name="styleSheet">
-       <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
+       <string notr="true">/*color: rgb(0, 0, 127);*/
+
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
 }</string>
       </property>
-      <property name="text">
-       <string>STATISTIQUES</string>
+      <property name="title">
+       <string>Statistiques des prix des equipements : </string>
       </property>
+      <widget class="QCustomPlot" name="customPlot2" native="true">
+       <property name="geometry">
+        <rect>
+         <x>240</x>
+         <y>140</y>
+         <width>751</width>
+         <height>371</height>
+        </rect>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="stat_button">
+       <property name="geometry">
+        <rect>
+         <x>380</x>
+         <y>70</y>
+         <width>421</width>
+         <height>34</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
+       </property>
+       <property name="text">
+        <string>STATISTIQUES</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_b5">
+       <property name="geometry">
+        <rect>
+         <x>10</x>
+         <y>40</y>
+         <width>1171</width>
+         <height>511</height>
+        </rect>
+       </property>
+       <property name="text">
+        <string/>
+       </property>
+      </widget>
+      <widget class="Line" name="line">
+       <property name="geometry">
+        <rect>
+         <x>910</x>
+         <y>110</y>
+         <width>131</width>
+         <height>16</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Horizontal</enum>
+       </property>
+      </widget>
+      <widget class="Line" name="line_2">
+       <property name="geometry">
+        <rect>
+         <x>890</x>
+         <y>40</y>
+         <width>51</width>
+         <height>81</height>
+        </rect>
+       </property>
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_11">
+       <property name="geometry">
+        <rect>
+         <x>1060</x>
+         <y>110</y>
+         <width>69</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
+       </property>
+       <property name="text">
+        <string>prix</string>
+       </property>
+      </widget>
+      <widget class="QLabel" name="label_31">
+       <property name="geometry">
+        <rect>
+         <x>900</x>
+         <y>20</y>
+         <width>151</width>
+         <height>20</height>
+        </rect>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
+       </property>
+       <property name="text">
+        <string>nombre equipement</string>
+       </property>
+      </widget>
+      <zorder>label_b5</zorder>
+      <zorder>customPlot2</zorder>
+      <zorder>stat_button</zorder>
+      <zorder>line</zorder>
+      <zorder>line_2</zorder>
+      <zorder>label_11</zorder>
+      <zorder>label_31</zorder>
      </widget>
     </widget>
     <widget class="QWidget" name="tab_7">
@@ -1214,10 +1430,29 @@ font-size: 15px;
       <property name="geometry">
        <rect>
         <x>10</x>
-        <y>20</y>
-        <width>1081</width>
-        <height>501</height>
+        <y>10</y>
+        <width>1191</width>
+        <height>561</height>
        </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">/*color: rgb(0, 0, 127);*/
+
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}</string>
       </property>
       <property name="currentIndex">
        <number>1</number>
@@ -1236,13 +1471,8 @@ font-size: 15px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);</string>
         </property>
         <property name="text">
          <string>Ajouter Reclamation</string>
@@ -1256,6 +1486,11 @@ font-size: 15px;
           <width>131</width>
           <height>20</height>
          </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
         </property>
         <property name="text">
          <string>ID Fournisseur: </string>
@@ -1290,6 +1525,11 @@ font-size: 15px;
           <height>20</height>
          </rect>
         </property>
+        <property name="styleSheet">
+         <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;</string>
+        </property>
         <property name="text">
          <string>ID Reclamation: </string>
         </property>
@@ -1304,40 +1544,44 @@ font-size: 15px;
          </rect>
         </property>
        </widget>
+       <widget class="QGroupBox" name="groupBox_6">
+        <property name="geometry">
+         <rect>
+          <x>0</x>
+          <y>20</y>
+          <width>1181</width>
+          <height>501</height>
+         </rect>
+        </property>
+        <property name="title">
+         <string>Ajout reclamation </string>
+        </property>
+        <widget class="QLabel" name="label_b6">
+         <property name="geometry">
+          <rect>
+           <x>0</x>
+           <y>-10</y>
+           <width>1171</width>
+           <height>501</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+       </widget>
+       <zorder>groupBox_6</zorder>
+       <zorder>reclam_butt_ajouter</zorder>
+       <zorder>label_26</zorder>
+       <zorder>Id_recl</zorder>
+       <zorder>textEdit</zorder>
+       <zorder>label_27</zorder>
+       <zorder>Id_recl_4</zorder>
       </widget>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
         <string>Afficher</string>
        </attribute>
-       <widget class="QLabel" name="label_28">
-        <property name="geometry">
-         <rect>
-          <x>30</x>
-          <y>50</y>
-          <width>31</width>
-          <height>20</height>
-         </rect>
-        </property>
-        <property name="styleSheet">
-         <string notr="true">QLabel {
-font-weight: bold;
-font-size: 15px;
-}</string>
-        </property>
-        <property name="text">
-         <string>ID</string>
-        </property>
-       </widget>
-       <widget class="QLineEdit" name="Id_recl_3">
-        <property name="geometry">
-         <rect>
-          <x>80</x>
-          <y>50</y>
-          <width>113</width>
-          <height>25</height>
-         </rect>
-        </property>
-       </widget>
        <widget class="QPushButton" name="afficher_reclam">
         <property name="geometry">
          <rect>
@@ -1348,26 +1592,12 @@ font-size: 15px;
          </rect>
         </property>
         <property name="styleSheet">
-         <string notr="true">QPushButton
-{
-  border: 2px solid black;
-  border-radius: 10px;
-  padding: 0 8px;
-  background: rgb(92, 130, 255);
-}</string>
+         <string notr="true">color: rgb(255, 255, 255);
+background-color: rgb(0, 0, 127);
+</string>
         </property>
         <property name="text">
          <string>Afficher</string>
-        </property>
-       </widget>
-       <widget class="QListView" name="listView">
-        <property name="geometry">
-         <rect>
-          <x>75</x>
-          <y>101</y>
-          <width>511</width>
-          <height>351</height>
-         </rect>
         </property>
        </widget>
        <widget class="QLabel" name="photo5">
@@ -1383,45 +1613,113 @@ font-size: 15px;
          <string/>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_4">
+       <widget class="QGroupBox" name="groupBox_7">
         <property name="geometry">
          <rect>
-          <x>640</x>
-          <y>150</y>
-          <width>112</width>
-          <height>34</height>
+          <x>10</x>
+          <y>20</y>
+          <width>1171</width>
+          <height>511</height>
          </rect>
         </property>
-        <property name="text">
-         <string>ON</string>
+        <property name="styleSheet">
+         <string notr="true">/*color: rgb(0, 0, 127);*/
+
+QGroupBox {
+	
+   font: 10pt &quot;MS Shell Dlg 2&quot;;
+font: bold;
+text-align:center;
+    border: 2px solid white;
+    border-radius: 5px;
+    margin-top: 1ex;
+}
+
+QGroupBox::title {
+ 
+    subcontrol-position: top center; /* position at the top center */
+  
+}</string>
         </property>
+        <property name="title">
+         <string>Affichage reclamation </string>
+        </property>
+        <widget class="QLabel" name="update_label">
+         <property name="geometry">
+          <rect>
+           <x>760</x>
+           <y>240</y>
+           <width>251</width>
+           <height>201</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_b8">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>40</y>
+           <width>1151</width>
+           <height>461</height>
+          </rect>
+         </property>
+         <property name="text">
+          <string/>
+         </property>
+        </widget>
+        <widget class="QListView" name="listView">
+         <property name="geometry">
+          <rect>
+           <x>60</x>
+           <y>140</y>
+           <width>511</width>
+           <height>351</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLineEdit" name="Id_recl_3">
+         <property name="geometry">
+          <rect>
+           <x>130</x>
+           <y>100</y>
+           <width>113</width>
+           <height>25</height>
+          </rect>
+         </property>
+        </widget>
+        <widget class="QLabel" name="label_28">
+         <property name="geometry">
+          <rect>
+           <x>70</x>
+           <y>100</y>
+           <width>31</width>
+           <height>20</height>
+          </rect>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">border:none;
+border-bottom:1px solid #707172;
+background: transparent;QLabel {
+font-weight: bold;
+font-size: 15px;
+}</string>
+         </property>
+         <property name="text">
+          <string>ID</string>
+         </property>
+        </widget>
+        <zorder>label_b8</zorder>
+        <zorder>update_label</zorder>
+        <zorder>listView</zorder>
+        <zorder>Id_recl_3</zorder>
+        <zorder>label_28</zorder>
        </widget>
-       <widget class="QPushButton" name="pushButton_5">
-        <property name="geometry">
-         <rect>
-          <x>640</x>
-          <y>210</y>
-          <width>112</width>
-          <height>34</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string>OFF</string>
-        </property>
-       </widget>
-       <widget class="QLabel" name="update_label">
-        <property name="geometry">
-         <rect>
-          <x>810</x>
-          <y>250</y>
-          <width>251</width>
-          <height>201</height>
-         </rect>
-        </property>
-        <property name="text">
-         <string/>
-        </property>
-       </widget>
+       <zorder>groupBox_7</zorder>
+       <zorder>afficher_reclam</zorder>
+       <zorder>photo5</zorder>
       </widget>
      </widget>
     </widget>
@@ -1432,7 +1730,7 @@ font-size: 15px;
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1218</width>
+     <width>1270</width>
      <height>30</height>
     </rect>
    </property>

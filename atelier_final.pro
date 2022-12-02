@@ -26,7 +26,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
-    arduino.cpp \
     excel.cpp \
     fournisseur.cpp \
         main.cpp \
@@ -35,7 +34,6 @@ SOURCES += \
     qcustomplot.cpp
 
 HEADERS += \
-    arduino.h \
     excel.h \
     fournisseur.h \
         mainwindow.h \
