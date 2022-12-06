@@ -2,7 +2,7 @@
 
 Connexion::Connexion()
 {
-
+//hello//
 }
 
 bool Connexion::createconnect()
