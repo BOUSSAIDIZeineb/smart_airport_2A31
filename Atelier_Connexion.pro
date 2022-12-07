@@ -6,6 +6,8 @@
 QT+=sql
 CONFIG+=console
 QT       += core gui sql printsupport network multimedia multimediawidgets charts widgets axcontainer
+QT += serialport
+QT +=charts
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -26,22 +28,43 @@ DEFINES += QT_DEPRECATED_WARNINGS
 CONFIG += c++11
 
 SOURCES += \
+    arduino.cpp \
     employes.cpp \
+    excel.cpp \
     exportexcelobject.cpp \
+    fournisseur.cpp \
+    histo.cpp \
         main.cpp \
         mainwindow.cpp \
     connection.cpp \
-    smtp.cpp
+    notif.cpp \
+    produit.cpp \
+    qcustomplot.cpp \
+    qrcode.cpp \
+    smtp.cpp \
+    vol.cpp \
+    voyageur.cpp
 
 HEADERS += \
+    arduino.h \
     employes.h \
+    excel.h \
     exportexcelobject.h \
+    fournisseur.h \
+    histo.h \
         mainwindow.h \
     connection.h \
-    smtp.h
+    notif.h \
+    produit.h \
+    qcustomplot.h \
+    qrcode.h \
+    smtp.h \
+    vol.h \
+    voyageur.h
 
 FORMS += \
-        mainwindow.ui
+        mainwindow.ui \
+        stat.ui
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
