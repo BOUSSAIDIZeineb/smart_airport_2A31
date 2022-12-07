@@ -38,7 +38,7 @@ Employes::Employes(int cin,QString nom,QString prenom,QString email,int num_tel,
 
 }
 
-Employes::Employes(int cin,int matricule,QString nom,QString prenom,QString role,QString email,int num_tel,int num_aff,QString etat_civil,QString sexe,QString date_naiss,QString date_1,QString date_2,double s_base,double s_brute,double cnss)
+Employes::Employes(int cin,int matricule,QString nom,QString prenom,QString role,QString email,int num_tel,int num_aff,QString etat_civil,QString sexe,QString date_naiss,QString date_1,QString date_2,double s_base,double s_brute,double cnss,QString etat_path)
 {
     this->cin=cin;
     this->matricule=matricule;
@@ -58,6 +58,7 @@ Employes::Employes(int cin,int matricule,QString nom,QString prenom,QString role
     this->cnss=cnss;
     this->couverture=(cnss * s_brute)/100;
     this->imposable=s_brute-couverture;
+    this->etat_path=etat_path;
 
 }
 
@@ -96,7 +97,7 @@ return model;
 QSqlQueryModel *Employes::afficher_paie()
 {
 QSqlQueryModel *model=new QSqlQueryModel();
-model->setQuery(" select matricule, nom, prenom, role,s_base,s_brute,cnss,couverture,imposable,date_1,date_2 from Emp ");
+model->setQuery(" select matricule, nom, prenom, role,s_base,s_brute,cnss,couverture,imposable,date_1,date_2 ,etat_path from Emp ");
 
 return model;
 }
@@ -172,6 +173,20 @@ bool Employes::supprimer2(QString cin){
     return query.exec();
 }
 
+bool Employes::modifierEtat(QString etat_path)
+{
+    QSqlQuery query;
 
+
+
+                query.prepare("UPDATE Emp SET  etat_path=:etat_path ");
+
+                       query.bindValue(":etat_path", etat_path);
+
+
+
+
+                  return query.exec();
+}
 
 

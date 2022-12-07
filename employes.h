@@ -6,7 +6,7 @@
 
 class Employes
 {
-    QString nom,prenom,email,role,etat_civil,sexe,date_naiss,date_1,date_2;
+    QString nom,prenom,email,role,etat_civil,sexe,date_naiss,date_1,date_2,etat_path;
     int cin,num_tel,num_aff,matricule;
     double s_base,s_brute,cnss,couverture,imposable;
 public:
@@ -14,7 +14,7 @@ public:
     Employes();
   //  Employes(int,QString,QString,QString,QString,QString,double,double,double);//paie
     Employes(int,QString,QString,QString,int,int,int,QString,QString,QString,QString);//ajout
-    Employes(int ,int ,QString ,QString ,QString ,QString ,int ,int ,QString ,QString ,QString ,QString ,QString ,double ,double ,double );
+    Employes(int ,int ,QString ,QString ,QString ,QString ,int ,int ,QString ,QString ,QString ,QString ,QString ,double ,double ,double,QString);
     //Getters
     QString getNom(){return nom;}
     QString getPrenom(){return prenom;}
@@ -31,7 +31,7 @@ public:
      bool modifier(int);
       bool modifier2(int);
      bool supprimer2(QString);
-
+     bool modifierEtat(QString);
 };
 
 #endif // EMPLOYES_H
